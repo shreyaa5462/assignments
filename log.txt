@@ -1,0 +1,12 @@
+[INFO] Server started successfully.
+[ERROR] Failed to connect to database.
+[WARNING] High memory usage detected.
+[INFO] User 'admin' logged in.
+[INFO] Processing data batch 1.
+[ERROR] Network timeout occurred.
+[WARNING] Disk space is running low.
+[INFO] Background task completed.
+[INFO] Another informational message.
+[ERROR] Critical service stopped.
+This is just a random line.
+[INFO] System shutdown initiated.
