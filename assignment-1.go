@@ -86,7 +86,6 @@ func convertCurrency(amount float64, sourceCurrency, targetCurrency string) (flo
 func listSupportedCurrencies() {
 	fmt.Println("Supported Currencies and their rates (1 USD = X Currency):")
 	for currency, rate := range exchangeRates {
-		// Skip USD itself for a cleaner "1 USD = X Currency" format, as USD is the base.
 		if currency != "USD" {
 			fmt.Printf("  1 USD = %.2f %s\n", rate, currency)
 		}
@@ -107,3 +106,5 @@ func printUsage() {
 	fmt.Println("  go run main.go --list    (To list all supported currencies and their rates)")
 	fmt.Println("\nSupported Currencies: USD, EUR, INR, JPY")
 }
+
+//https://github.com/shreyaa5462/assignments/pull/1
