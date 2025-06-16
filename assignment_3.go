@@ -144,7 +144,7 @@ func main() {
 			tracker.CompleteTask(id)
 		case 4: // Exit
 			fmt.Println("Exiting Task Tracker. Goodbye!")
-			return // Exit the main function, terminating the program
+			return //                    Exit the main function, terminating the program
 		default: // Invalid option
 			fmt.Println("Invalid option. Please choose a number between 1 and 4.")
 		}
