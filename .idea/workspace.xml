@@ -5,7 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1316777d-6c9e-4b66-8a21-f0a4d30f140b" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/assignments/demo.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assignment-1.go" beforeDir="false" afterPath="$PROJECT_DIR$/assignment1/assignment-1.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assignment_2.go" beforeDir="false" afterPath="$PROJECT_DIR$/assignment-2/assignment_2.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assignment_3.go" beforeDir="false" afterPath="$PROJECT_DIR$/assignment-3/assignment_3.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assignments" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -24,9 +28,9 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
     <option name="ROOT_SYNC" value="DONT_SYNC" />
   </component>
-  <component name="KubernetesApiProvider"><![CDATA[{
-  "isMigrated": true
-}]]></component>
+  <component name="KubernetesApiProvider">{
+  &quot;isMigrated&quot;: true
+}</component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 0
 }</component>
@@ -60,6 +64,10 @@
 }</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/assignment-3" />
+      <recent name="$PROJECT_DIR$/assignment-2" />
+      <recent name="$PROJECT_DIR$/.github/workflows" />
+      <recent name="$PROJECT_DIR$/assignment1" />
       <recent name="$PROJECT_DIR$" />
     </key>
   </component>
@@ -117,6 +125,17 @@
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
   <component name="VgoProject">
     <settings-migrated>true</settings-migrated>
