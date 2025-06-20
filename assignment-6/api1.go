@@ -212,11 +212,11 @@ func main() {
 		}
 	}
 
-	http.HandleFunc("GET /gettask", func(w http.ResponseWriter, r *http.Request) { httpListallTask(w, r, tracker) })
-	http.HandleFunc("GET /gettaskbyID/{id}", func(w http.ResponseWriter, r *http.Request) { httpListbyId(w, r, tracker) })
-	http.HandleFunc("POST /addtask", func(w http.ResponseWriter, r *http.Request) { httppostTask(w, r, tracker) })
-	http.HandleFunc("DELETE /delete", func(w http.ResponseWriter, r *http.Request) { httpDeletetask(w, r, tracker) })
-	http.HandleFunc("PUT /mark", func(w http.ResponseWriter, r *http.Request) { httpPutTask(w, r, tracker) })
+	http.HandleFunc("GET /task", func(w http.ResponseWriter, r *http.Request) { httpListallTask(w, r, tracker) })
+	http.HandleFunc("GET /task/{id}", func(w http.ResponseWriter, r *http.Request) { httpListbyId(w, r, tracker) })
+	http.HandleFunc("POST /task", func(w http.ResponseWriter, r *http.Request) { httppostTask(w, r, tracker) })
+	http.HandleFunc("DELETE/task", func(w http.ResponseWriter, r *http.Request) { httpDeletetask(w, r, tracker) })
+	http.HandleFunc("PUT /task", func(w http.ResponseWriter, r *http.Request) { httpPutTask(w, r, tracker) })
 	err := http.ListenAndServe(":8080", nil)
 	if err != nil {
 		fmt.Println(err)
