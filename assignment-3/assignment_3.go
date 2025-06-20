@@ -1,24 +1,22 @@
 package main
 
 import (
-	"bufio"   // For robust line reading from standard input
-	"fmt"     // For formatted I/O (printing and reading)
-	"os"      // For standard input/output streams
-	"strconv" // For converting string to int
-	"strings" // For string manipulation like trimming whitespace
+	"bufio"
+	"fmt"
+	"os"
+	"strconv"
+	"strings"
 )
 
 // Task represents a single task in our tracker.
 type Task struct {
-	ID          int    // Unique identifier for the task
-	Description string // Description of the task
-	Completed   bool   // Status: true if completed, false otherwise (pending)
+	ID          int
+	Description string
+	Completed   bool
 }
-
-// TaskTracker manages the collection of tasks and generates unique IDs.
 type TaskTracker struct {
-	tasks     []Task     // Slice to store all tasks (both pending and completed)
-	nextIDGen func() int // Function closure to generate unique task IDs
+	tasks     []Task
+	nextIDGen func() int
 }
 
 // idGenerator is a closure that generates unique sequential integer IDs.
@@ -35,8 +33,8 @@ func idGenerator() func() int {
 // It also sets up the unique ID generator.
 func NewTaskTracker() *TaskTracker {
 	return &TaskTracker{
-		tasks:     []Task{},      // Initialize an empty slice of tasks
-		nextIDGen: idGenerator(), // Assign the closure to generate IDs
+		tasks:     []Task{},
+		nextIDGen: idGenerator(),
 	}
 }
 
