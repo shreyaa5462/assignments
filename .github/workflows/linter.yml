@@ -2,7 +2,7 @@ name: Run LINTERS when pushed
 
 on:
   push:
-    branches: ["assign_7"]
+    branches: ["master"]
 
 jobs:
   push_and_check_linters:
@@ -21,4 +21,4 @@ jobs:
         uses: golangci/golangci-lint-action@v7
         with:
           version: v2.1.6
-          args: ./assign6/...
+          args: ./assignment1/...
