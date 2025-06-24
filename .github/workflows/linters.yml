@@ -1,6 +1,5 @@
 # Name of the workflow
 name: Go Build
-
 # Define when the workflow should run
 on:
   push:
