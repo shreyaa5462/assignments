@@ -5,11 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1316777d-6c9e-4b66-8a21-f0a4d30f140b" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/assignment-6/.golangci.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assignment-8/assignment_8.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/main.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assignment-1.go" beforeDir="false" afterPath="$PROJECT_DIR$/assignment1/assignment-1.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assignment_2.go" beforeDir="false" afterPath="$PROJECT_DIR$/assignment-2/assignment_2.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assignment_3.go" beforeDir="false" afterPath="$PROJECT_DIR$/assignment-3/assignment_3.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assignments" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assignment-3/.golangci.yml" beforeDir="false" afterPath="$PROJECT_DIR$/.github/workflows/linters.yml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -39,29 +40,40 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;DefaultGoTemplateProperty&quot;: &quot;Go File&quot;,
-    &quot;Go Build.go build assignment-1.go.executor&quot;: &quot;Run&quot;,
-    &quot;Go Build.go build assignment-3.go.executor&quot;: &quot;Run&quot;,
-    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.GoLinterPluginOnboarding&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.GoLinterPluginStorageMigration&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.go.formatter.settings.were.checked&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.go.migrated.go.modules.settings&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.go.modules.go.list.on.any.changes.was.set&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
-    &quot;go.import.settings.migrated&quot;: &quot;true&quot;,
-    &quot;go.sdk.automatically.set&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/Users/zopdev&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "DefaultGoTemplateProperty": "Go File",
+    "Go Build.go build assignment-1.go.executor": "Run",
+    "Go Build.go build assignment-3.go.executor": "Run",
+    "Go Test.BenchmarkHttpListAllTask in dailyprojects/assignment-6.executor": "Run",
+    "Go Test.BenchmarkHttpPostTask in dailyprojects/assignment-6.executor": "Run",
+    "Go Test.TestCompleteWorkflow in dailyprojects/assignment-6.executor": "Run",
+    "Go Test.TestHttpDeleteTask in dailyprojects/assignment-6.executor": "Run",
+    "Go Test.TestHttpListAllTask in dailyprojects/assignment-6.executor": "Run",
+    "Go Test.TestHttpListAllTaskEmpty in dailyprojects/assignment-6.executor": "Run",
+    "Go Test.TestHttpListById in dailyprojects/assignment-6.executor": "Run",
+    "Go Test.TestHttpPost in dailyprojects/assignment-6.executor": "Run",
+    "Go Test.TestHttpPostTask in dailyprojects/assignment-6.executor": "Run",
+    "Go Test.TestHttpPutTask in dailyprojects/assignment-6.executor": "Run",
+    "Go Test.TestHttpPutTaskAlreadyCompleted in dailyprojects/assignment-6.executor": "Run",
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "RunOnceActivity.GoLinterPluginOnboarding": "true",
+    "RunOnceActivity.GoLinterPluginStorageMigration": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "RunOnceActivity.go.formatter.settings.were.checked": "true",
+    "RunOnceActivity.go.migrated.go.modules.settings": "true",
+    "RunOnceActivity.go.modules.go.list.on.any.changes.was.set": "true",
+    "git-widget-placeholder": "docker",
+    "go.import.settings.migrated": "true",
+    "go.sdk.automatically.set": "true",
+    "last_opened_file_path": "/Users/zopdev",
+    "node.js.detected.package.eslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/assignment-3" />
@@ -71,7 +83,7 @@
       <recent name="$PROJECT_DIR$" />
     </key>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Go Test.TestHttpListAllTask in dailyprojects/assignment-6">
     <configuration default="true" type="GoApplicationRunConfiguration" factoryName="Go Application">
       <module name="dailyprojects" />
       <working_directory value="$PROJECT_DIR$" />
@@ -81,12 +93,64 @@
       <filePath value="$PROJECT_DIR$" />
       <method v="2" />
     </configuration>
-    <configuration name="go build assignment_1.go" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true">
+    <configuration name="BenchmarkHttpListAllTask in dailyprojects/assignment-6" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
       <module name="dailyprojects" />
-      <working_directory value="$PROJECT_DIR$/assignments" />
-      <kind value="FILE" />
+      <working_directory value="$PROJECT_DIR$/assignment-6" />
+      <root_directory value="$PROJECT_DIR$" />
+      <kind value="PACKAGE" />
+      <package value="dailyprojects/assignment-6" />
       <directory value="$PROJECT_DIR$" />
-      <filePath value="$PROJECT_DIR$/assignment-3.go|$PROJECT_DIR$/assignment_3.go|$PROJECT_DIR$/assignment_3.go|$PROJECT_DIR$/assignment_3.go|$PROJECT_DIR$/assignment-1.go" />
+      <filePath value="$PROJECT_DIR$" />
+      <framework value="gobench" />
+      <pattern value="^\QBenchmarkHttpListAllTask\E$" />
+      <method v="2" />
+    </configuration>
+    <configuration name="TestHttpListAllTask in dailyprojects/assignment-6" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
+      <module name="dailyprojects" />
+      <working_directory value="$PROJECT_DIR$/assignment-6" />
+      <root_directory value="$PROJECT_DIR$" />
+      <kind value="PACKAGE" />
+      <package value="dailyprojects/assignment-6" />
+      <directory value="$PROJECT_DIR$" />
+      <filePath value="$PROJECT_DIR$" />
+      <framework value="gotest" />
+      <pattern value="^\QTestHttpListAllTask\E$" />
+      <method v="2" />
+    </configuration>
+    <configuration name="TestHttpListAllTaskEmpty in dailyprojects/assignment-6" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
+      <module name="dailyprojects" />
+      <working_directory value="$PROJECT_DIR$/assignment-6" />
+      <root_directory value="$PROJECT_DIR$" />
+      <kind value="PACKAGE" />
+      <package value="dailyprojects/assignment-6" />
+      <directory value="$PROJECT_DIR$" />
+      <filePath value="$PROJECT_DIR$" />
+      <framework value="gotest" />
+      <pattern value="^\QTestHttpListAllTaskEmpty\E$" />
+      <method v="2" />
+    </configuration>
+    <configuration name="TestHttpListById in dailyprojects/assignment-6" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
+      <module name="dailyprojects" />
+      <working_directory value="$PROJECT_DIR$/assignment-6" />
+      <root_directory value="$PROJECT_DIR$" />
+      <kind value="PACKAGE" />
+      <package value="dailyprojects/assignment-6" />
+      <directory value="$PROJECT_DIR$" />
+      <filePath value="$PROJECT_DIR$" />
+      <framework value="gotest" />
+      <pattern value="^\QTestHttpListById\E$" />
+      <method v="2" />
+    </configuration>
+    <configuration name="TestHttpPostTask in dailyprojects/assignment-6" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
+      <module name="dailyprojects" />
+      <working_directory value="$PROJECT_DIR$/assignment-6" />
+      <root_directory value="$PROJECT_DIR$" />
+      <kind value="PACKAGE" />
+      <package value="dailyprojects/assignment-6" />
+      <directory value="$PROJECT_DIR$" />
+      <filePath value="$PROJECT_DIR$" />
+      <framework value="gotest" />
+      <pattern value="^\QTestHttpPostTask\E$" />
       <method v="2" />
     </configuration>
     <configuration default="true" type="GoTestRunConfiguration" factoryName="Go Test">
@@ -101,7 +165,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Go Build.go build assignment_1.go" />
+        <item itemvalue="Go Test.TestHttpListAllTask in dailyprojects/assignment-6" />
+        <item itemvalue="Go Test.TestHttpPostTask in dailyprojects/assignment-6" />
+        <item itemvalue="Go Test.TestHttpListById in dailyprojects/assignment-6" />
+        <item itemvalue="Go Test.TestHttpListAllTaskEmpty in dailyprojects/assignment-6" />
+        <item itemvalue="Go Test.BenchmarkHttpListAllTask in dailyprojects/assignment-6" />
       </list>
     </recent_temporary>
   </component>
@@ -139,5 +207,16 @@
   </component>
   <component name="VgoProject">
     <settings-migrated>true</settings-migrated>
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="DlvLineBreakpoint">
+          <url>file://$PROJECT_DIR$/assignment-6/api_test.go</url>
+          <line>118</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>
