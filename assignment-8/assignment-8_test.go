@@ -1,3 +1,98 @@
+// package main
+//
+// import (
+//
+//	"bytes"
+//	"encoding/json"
+//	"net/http"
+//	"net/http/httptest"
+//	"strconv"
+//	"testing"
+//
+//	_ "github.com/go-sql-driver/mysql"
+//
+// )
+//
+// var tracker *TaskTracker
+//
+//	func init() {
+//		db, err := InitDB()
+//		if err != nil {
+//			panic(err)
+//		}
+//		tracker = NewTaskTracker(db)
+//	}
+//
+//	func TestAddTask(t *testing.T) {
+//		payload := []byte(`{"description":"Test task"}`)
+//
+//		req := httptest.NewRequest(http.MethodPost, "/task", bytes.NewBuffer(payload))
+//		w := httptest.NewRecorder()
+//
+//		httppostTask(w, req, tracker)
+//
+//		resp := w.Result()
+//		defer resp.Body.Close()
+//
+//		if resp.StatusCode != http.StatusOK {
+//			t.Errorf("Expected 200, got %d", resp.StatusCode)
+//		}
+//
+//		var task Task
+//		json.NewDecoder(resp.Body).Decode(&task)
+//
+//		if task.Description != "Test task" {
+//			t.Errorf("Expected task description 'Test task', got '%s'", task.Description)
+//		}
+//	}
+//
+//	func TestGetTasks(t *testing.T) {
+//		req := httptest.NewRequest(http.MethodGet, "/task", nil)
+//		w := httptest.NewRecorder()
+//
+//		httpListallTask(w, req, tracker)
+//
+//		resp := w.Result()
+//		defer resp.Body.Close()
+//
+//		if resp.StatusCode != http.StatusOK {
+//			t.Errorf("Expected 200, got %d", resp.StatusCode)
+//		}
+//	}
+//
+//	func TestCompleteTask(t *testing.T) {
+//		// First, create a task
+//		task, _ := tracker.AddTask("Task to complete")
+//
+//		req := httptest.NewRequest(http.MethodPut, "/task?id="+strconv.Itoa(task.ID), nil)
+//		w := httptest.NewRecorder()
+//
+//		httpPutTask(w, req, tracker)
+//
+//		resp := w.Result()
+//		defer resp.Body.Close()
+//
+//		if resp.StatusCode != http.StatusOK {
+//			t.Errorf("Expected 200 OK, got %d", resp.StatusCode)
+//		}
+//	}
+//
+//	func TestDeleteTask(t *testing.T) {
+//		// Add a task to delete
+//		task, _ := tracker.AddTask("Task to delete")
+//
+//		req := httptest.NewRequest(http.MethodDelete, "/task?id="+strconv.Itoa(task.ID), nil)
+//		w := httptest.NewRecorder()
+//
+//		httpDeletetask(w, req, tracker)
+//
+//		resp := w.Result()
+//		defer resp.Body.Close()
+//
+//		if resp.StatusCode != http.StatusOK {
+//			t.Errorf("Expected 200, got %d", resp.StatusCode)
+//		}
+//	}
 package main
 
 import (
@@ -7,66 +102,47 @@ import (
 	"net/http/httptest"
 	"strconv"
 	"testing"
-
-	_ "github.com/go-sql-driver/mysql"
 )
 
-var tracker *TaskTracker
+var testTracker *TaskTracker
 
-// ✅ Setup DB connection once for tests
+// Setup: connect to DB once
 func init() {
 	db, err := InitDB()
 	if err != nil {
 		panic(err)
 	}
-	tracker = NewTaskTracker(db)
+	testTracker = NewTaskTracker(db)
 }
 
-func TestAddTask(t *testing.T) {
+func TestHTTPPostTask(t *testing.T) {
 	payload := []byte(`{"description":"Test task"}`)
 
 	req := httptest.NewRequest(http.MethodPost, "/task", bytes.NewBuffer(payload))
 	w := httptest.NewRecorder()
 
-	httppostTask(w, req, tracker)
+	httppostTask(w, req, testTracker)
 
 	resp := w.Result()
 	defer resp.Body.Close()
 
 	if resp.StatusCode != http.StatusOK {
-		t.Errorf("Expected 200, got %d", resp.StatusCode)
+		t.Errorf("Expected 200 OK, got %d", resp.StatusCode)
 	}
 
 	var task Task
 	json.NewDecoder(resp.Body).Decode(&task)
 
 	if task.Description != "Test task" {
-		t.Errorf("Expected task description 'Test task', got '%s'", task.Description)
+		t.Errorf("Expected description 'Test task', got '%s'", task.Description)
 	}
 }
 
-func TestGetTasks(t *testing.T) {
+func TestHTTPGetAllTasks(t *testing.T) {
 	req := httptest.NewRequest(http.MethodGet, "/task", nil)
 	w := httptest.NewRecorder()
 
-	httpListallTask(w, req, tracker)
-
-	resp := w.Result()
-	defer resp.Body.Close()
-
-	if resp.StatusCode != http.StatusOK {
-		t.Errorf("Expected 200, got %d", resp.StatusCode)
-	}
-}
-
-func TestCompleteTask(t *testing.T) {
-	// First, create a task
-	task, _ := tracker.AddTask("Task to complete")
-
-	req := httptest.NewRequest(http.MethodPut, "/task?id="+strconv.Itoa(task.ID), nil)
-	w := httptest.NewRecorder()
-
-	httpPutTask(w, req, tracker)
+	httpListallTask(w, req, testTracker)
 
 	resp := w.Result()
 	defer resp.Body.Close()
@@ -76,19 +152,64 @@ func TestCompleteTask(t *testing.T) {
 	}
 }
 
-func TestDeleteTask(t *testing.T) {
-	// Add a task to delete
-	task, _ := tracker.AddTask("Task to delete")
+func TestHTTPPutTask(t *testing.T) {
+	// First, add a task
+	task, _ := testTracker.AddTask("Task to mark done")
 
-	req := httptest.NewRequest(http.MethodDelete, "/task?id="+strconv.Itoa(task.ID), nil)
+	req := httptest.NewRequest(http.MethodPut, "/task?id="+strconv.Itoa(task.ID), nil)
 	w := httptest.NewRecorder()
 
-	httpDeletetask(w, req, tracker)
+	httpPutTask(w, req, testTracker)
 
 	resp := w.Result()
 	defer resp.Body.Close()
 
 	if resp.StatusCode != http.StatusOK {
-		t.Errorf("Expected 200, got %d", resp.StatusCode)
+		t.Errorf("Expected 200 OK, got %d", resp.StatusCode)
+	}
+}
+
+func TestHTTPDeleteTask(t *testing.T) {
+	// Add task to delete
+	task, _ := testTracker.AddTask("Task to delete")
+
+	req := httptest.NewRequest(http.MethodDelete, "/task?id="+strconv.Itoa(task.ID), nil)
+	w := httptest.NewRecorder()
+
+	httpDeletetask(w, req, testTracker)
+
+	resp := w.Result()
+	defer resp.Body.Close()
+
+	if resp.StatusCode != http.StatusOK {
+		t.Errorf("Expected 200 OK, got %d", resp.StatusCode)
+	}
+}
+
+func TestHTTPGetTaskByID(t *testing.T) {
+	// Add task
+	task, _ := testTracker.AddTask("Task to fetch by ID")
+
+	// Simulate /task/{id} with PathValue
+	req := httptest.NewRequest(http.MethodGet, "/task/"+strconv.Itoa(task.ID), nil)
+
+	// Manually set path value (Go 1.22+ only, or else simulate)
+	req.SetPathValue("id", strconv.Itoa(task.ID))
+
+	w := httptest.NewRecorder()
+	httpListbyId(w, req, testTracker)
+
+	resp := w.Result()
+	defer resp.Body.Close()
+
+	if resp.StatusCode != http.StatusOK {
+		t.Errorf("Expected 200 OK, got %d", resp.StatusCode)
+	}
+
+	var fetched Task
+	json.NewDecoder(resp.Body).Decode(&fetched)
+
+	if fetched.ID != task.ID {
+		t.Errorf("Expected task ID %d, got %d", task.ID, fetched.ID)
 	}
 }
