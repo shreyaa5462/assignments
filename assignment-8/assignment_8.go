@@ -1,18 +1,14 @@
 package main
 
 import (
-	"bufio"
 	"database/sql"
 	"encoding/json"
 	"fmt"
+	_ "github.com/go-sql-driver/mysql"
 	"io"
 	"log"
 	"net/http"
-	"os"
 	"strconv"
-	"strings"
-
-	_ "github.com/go-sql-driver/mysql"
 )
 
 type Task struct {
@@ -32,17 +28,13 @@ func NewTaskTracker(db *sql.DB) *TaskTracker {
 	}
 }
 
-// InitDB initializes the database connection and creates the tasks table
 func InitDB() (*sql.DB, error) {
-	// Update these credentials according to your MySQL setup
-	// Example: "root:yourpassword@tcp(localhost:3306)/taskdb"
 	dsn := "root:shreya123@tcp(localhost:3306)/shreya"
 	db, err := sql.Open("mysql", dsn)
 	if err != nil {
 		return nil, err
 	}
 
-	// Test the connection
 	if err = db.Ping(); err != nil {
 		return nil, err
 	}
@@ -63,8 +55,6 @@ func InitDB() (*sql.DB, error) {
 
 	return db, nil
 }
-
-// AddTask adds a new task to the database
 func (tt *TaskTracker) AddTask(description string) (Task, error) {
 	query := "INSERT INTO tasks (description, completed) VALUES (?, ?)"
 	result, err := tt.db.Exec(query, description, false)
@@ -306,21 +296,6 @@ func httpPutTask(w http.ResponseWriter, r *http.Request, tracker *TaskTracker) {
 }
 
 // CLI Functions (keeping for backward compatibility)
-
-func displayMenu() {
-	fmt.Println("\n--- Personal Task Tracker ---")
-	fmt.Println("1. Add a new task")
-	fmt.Println("2. List all pending tasks")
-	fmt.Println("3. Mark a task as completed")
-	fmt.Println("4. Exit")
-	fmt.Print("Choose an option: ")
-}
-
-func getUserInput() string {
-	reader := bufio.NewReader(os.Stdin)
-	input, _ := reader.ReadString('\n')
-	return strings.TrimSpace(input)
-}
 
 func main() {
 	// Initialize database
