@@ -5,7 +5,7 @@ name: Go CI/CD
 on:
   push:
     branches:
-      - master
+      - day-9
   pull_request:
     branches:
       - master
